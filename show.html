@@ -1,0 +1,88 @@
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="topnav" id="myTopnav">
+  <ul class="nav">
+    <li><a href="#">ZOHO</a></li>
+    <li><a href="/book">Create</a></li>
+</ul>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+  <table class="list" id="employeeList">
+       <thead>
+           <tr>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Email</th>
+               <th>Salary</th>
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+
+       </tbody>
+   </table>
+
+   <footer class="foot">
+         <div class="footer-content">
+
+             <ul class="socials">
+                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                 <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                 <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+             </ul>
+         </div>
+         <div class="footer-bottom">
+             <p>copyright &copy;2020</p>
+         </div>
+     </footer>
+<script>
+
+  fetch("http://localhost:3000/books").then(response=>{
+  response.json().then(data=>{
+    console.log(data);
+
+    document.getElementById('employeeList').addEventListener('Click',()=>{
+      console.log("ho");
+    })
+    if(data.length>0);
+
+      data.forEach((data)=>{
+        var table= document.getElementById("employeeList").getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.length);
+        cell1 = newRow.insertCell(0);
+        cell1.innerHTML = data.fname;
+        cell2 = newRow.insertCell(1);
+        cell2.innerHTML = data.lname;
+        cell3 = newRow.insertCell(2);
+        cell3.innerHTML = data.email;
+        cell4 = newRow.insertCell(3);
+        cell4.innerHTML = data.id;
+        cell4 = newRow.insertCell(4);
+        var b=data.id;
+        cell4.innerHTML = `<a id="edit" onClick="onEdit(this)">Edit</a>
+                           <a id="del" onClick="onDelete(this)">Delete</a>`;
+      })
+      document.getElementById("employeeList").innerHTML=table;
+
+
+
+
+    })
+  })
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="css/styles.css">
+  </head>
+<body>
+<div class="topnav" id="myTopnav">
+  <ul class="nav">
+    <li><a href="#"> ZOHO</a></li>
+  <li><a href="/book">Create</a></li>
+    <li><a href="/show">show</a></li>
+</ul>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div id="frm">
+<form id="form1" action="http://localhost:3000/book"  method="POST">
+  <ul class="wrapper">
+  <li class="form-row">
+    <label for="name" id="fullNameValidationError">Name</label>
+    <input type="text" name="fname" id="fname" maxlength="25" pattern="[A-Za-z]{1,25}" placeholder="First Name" title="Username should only contain only Letters">
+  </li>
+  <li class="form-row">
+    <label for="townborn">Last name:</label>
+    <input type="text" name="lname" id="lname" maxlength="25" pattern="[A-Za-z]{1,25}" placeholder="Last Name" title="Username should only contain only Letters">
+  </li>
+  <li class="form-row">
+    <label for="email">Email Address</label>
+    <input onkeyup="check()" name="email" type="text" id="email" placeholder="abc@gmail.com" required>
+  </li>
+  <li class="error-text">Please enter valid email address</li>
+
+  <li class="form-row">
+ <label for="phone">Contact</label>
+<input type="text" name="number" id="number"  pattern="[7-9]{1}[0-9]{9}" title="only numbers and starts with 6-9 length 10" value="" placeholder="numbers">
+</li>
+
+
+  <li class="form-row">
+    <button id="button"  value="Submit" type="submit" disabled>Submit</button>
+  </li>
+
+
+</ul>
+
+
+</form>
+</div>
+
+
+</div>
+<footer class="foot">
+      <div class="footer-content">
+
+          <ul class="socials">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+          </ul>
+      </div>
+      <div class="footer-bottom">
+          <p>copyright &copy;2020</p>
+      </div>
+  </footer>
+  <script src="js/script.js">
+
+  </script>
+  </body>
+</html>
